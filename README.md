@@ -1,0 +1,1 @@
+sharelogic-design-pattern-guide
