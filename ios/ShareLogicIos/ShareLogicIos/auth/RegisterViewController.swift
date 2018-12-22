@@ -1,24 +1,25 @@
 //
-//  ViewController.swift
+//  RegisterViewController.swift
 //  ShareLogicIos
 //
-//  Created by admin on 18/12/2561 BE.
+//  Created by admin on 19/12/2561 BE.
 //  Copyright © 2561 AsUnDeR. All rights reserved.
 //
 
+import Foundation
 import UIKit
-import Domain
 
 
-class ViewController: UIViewController {
+class RegisterViewController: UIViewController {
     
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
-
-
+    
+    
+    
+    
+    
 }
-
