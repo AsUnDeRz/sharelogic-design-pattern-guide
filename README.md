@@ -2,7 +2,6 @@
 # Share Logic Design Pattern Guide
 
 ## Concept
-You can do this by:
 
 - แบ่งโครงสร้างแยกเป็นส่วนๆ
 - แชร์ Business Logic ระหว่าง Platform Android & IOS โดยต้องไม่มีโค้ดเฉพาะจงเจาะในแต่ละ Platform เช่น 
@@ -20,12 +19,20 @@ import com.android.**
 #### Platform
 
 `Platform` คือ ส่วนที่ Implementation จาก `Domain` และ Libary หรือ framwork อื่นๆ เฉพาะเจาะจงของแต่ละ Platform Android & IOS
+
+
 ----> Platform
+
 ------> Utils
+
 ------> Common 
+
 ------> ModuleName //ชื่อโมดูล เช่น Auth
+
 --------> ModuleUseCase  // UseCase ที่ Implementation จาก Domain
+
 --------> UiNameProvider  // Class ที่รวบรวม UseCase ต่างๆใน 1 UI 
+
 --------> ModuleApi 
 
 
