@@ -44,9 +44,10 @@ IOS -> UIView , UIViewController , ViewModel , etc
 
 
 
-###Example Usecase Android
-
-import com.theconcert.platform.auth.RegisterUseCase
+### Example Usecase Android
+//UseCase ต้องมาจาก Module Platform เท่านั้นนะครับ ตอนนี้ถ้าพิมมันจะขึ้นเห็นสอง UseCase เลยครับจากทั้ง Domain Platform เดี๋ยวตรงนี้ผมหาวิธีแก้อีกทีหลังครับ
+```
+import com.theconcert.platform.auth.RegisterUseCase 
 
 val usecase = RegisterUseCase()
 
@@ -59,9 +60,9 @@ val usecase = RegisterUseCase()
             },{
                 print(it)
             })
-
-###Example Usecase IOS
-
+```
+### Example Usecase IOS
+```
 import Platform
 
 let usecase = RegisterUseCase()
@@ -73,16 +74,15 @@ usecase.register(username: "user", password: "asdf")
             }, onError: { (error) in
                 print(error)
             })
+```
 
+### ตัว Response ที่ได้จาก onNext ทั้งหมดผมได้ทำการ map เป็น Model ทั้งหมดแล้วครับโดยจะมีแค่สอง state
+### 200-300 มี data แต่ error จะเท่ากับ null
+### 400 ขึ่นไป จะมี error แต่ data จะเป็น null แทน
+### ส่วนถ้าเข้าเคส onError นั้นคือจะเป็น error ที่ Api thowable มาเองเลยครับ
 
-#ตัว Response ที่ได้จาก onNext ทั้งหมดผมได้ทำการ map เป็น Model ทั้งหมดแล้วครับโดยจะมีแค่สอง state
-#200-300 มี data แต่ error จะเท่ากับ null
-#400 ขึ่นไป จะมี error แต่ data จะเป็น null แทน
-#ส่วนถ้าเข้าเคส onError นั้นคือจะเป็น error ที่ Api thowable มาเองเลยครับ
-
-##หมายเหตุ เพราะข้อมูลที่ได้จาก Api เป็นแบบ dynamic ครับโดยมี 2 node หลักๆ คือ "data":{} และ "error":{}
-##ผมจึงต้องทำให้ Model รองรับทั้งสองโหนด พี่อาจจะเช็ค state จาก null ได้เลยครับเพราะถ้าได้ Response มาถูกต้อง
-##จะมี node สักตัวที่มีค่ามาแน่ๆครับ
+### หมายเหตุ เพราะข้อมูลที่ได้จาก Api เป็นแบบ dynamic ครับโดยมี 2 node หลักๆ คือ "data":{} และ "error":{}
+### ผมจึงต้องทำให้ Model รองรับทั้งสองโหนด พี่อาจจะเช็ค state จาก null ได้เลยครับเพราะถ้าได้ Response มาถูกต้องจะมี node สักตัวที่มีค่ามาแน่ๆครับ
 
 Android
 
